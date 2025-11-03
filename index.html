@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>King Of Tale Studio</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+  body {
+    background: linear-gradient(135deg, #0c0c12, #1b1b2f);
+    color:#fff;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+  }
+  header { margin-top:80px; margin-bottom:30px; }
+  header h1 { font-size:2.5em; color:#ff005c; text-shadow:0 0 15px rgba(255,0,92,0.5); }
+  header h2 { font-size:1.2em; color:#ccc; font-weight:400; margin-top:5px; }
+
+  .genre-container {
+    background: rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1);
+    padding:15px 30px; border-radius:10px; width:70%; max-width:400px;
+    cursor:pointer; transition: all 0.3s ease; margin-bottom:15px;
+  }
+  .genre-container:hover {
+    background: rgba(255,255,255,0.1); box-shadow:0 0 15px rgba(255,0,92,0.3); transform:scale(1.03);
+  }
+  .genre-title { font-size:1.3em; font-weight:600; color:#fff; }
+
+  .song-section {
+    width:95%; max-width:1300px; margin-bottom:40px; display:none;
+    animation:fadeIn 0.6s ease forwards;
+  }
+  @keyframes fadeIn { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
+
+  .song-grid {
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; margin-top:20px;
+  }
+  .song-card {
+    background: rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+    padding:6px 10px; border-radius:6px; font-size:0.8em; transition: all 0.2s ease; text-align:left;
+  }
+  .song-card:hover { background: rgba(255,0,92,0.15); transform:translateY(-2px); }
+  .song-card span { color:#ff005c; font-weight:600; margin-right:5px; }
+
+  footer {
+    margin-top: auto;
+    color:#888;
+    font-size:0.8em;
+    border-top:1px solid rgba(255,255,255,0.1);
+    width:100%;
+    text-align:center;
+    padding:20px 0;
+  }
+
+  @media (max-width:1024px) {
+    .song-grid { grid-template-columns:repeat(3, 1fr); }
+  }
+  @media (max-width:768px) {
+    .song-grid { grid-template-columns:repeat(2, 1fr); }
+  }
+  @media (max-width:480px) {
+    .song-grid { grid-template-columns:1fr; }
+    .genre-container { width:90%; }
+    .song-card { font-size:0.75em; padding:5px 8px; }
+    header h1 { font-size:1.8em; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🎵 King Of Tale Studio</h1>
+  <h2>Daftar List Music</h2>
+</header>
+
+<!-- ===== GENRE BUTTONS ===== -->
+<div class="genre-container" id="bkb-button"><div class="genre-title">BKB</div></div>
+<div class="genre-container" id="techno-button"><div class="genre-title">TECHNO</div></div>
+<div class="genre-container" id="indobounce-button"><div class="genre-title">INDOBOUNCE</div></div>
+<div class="genre-container" id="afro-button"><div class="genre-title">AFRO</div></div>
+<div class="genre-container" id="hardstyle-button"><div class="genre-title">HARDSTYLE</div></div>
+<div class="genre-container" id="mandarin-button"><div class="genre-title">MANDARIN</div></div>
+
+<!-- ===== SONG LISTS ===== -->
+<!-- Contoh untuk BKB -->
+<div class="song-section" id="bkb-list">
+  <h2 style="color:#ff005c; margin-bottom:10px;">Daftar Lagu BKB</h2>
+  <div class="song-grid">
+    <!-- contoh -->
+    <div class="song-card"><span>1.</span> STAY HIGH LVE</div>
+    <div class="song-card"><span>2.</span> SIAPA ITU X LASERBEAM</div>
+    <div class="song-card"><span>3.</span> VIDRADO EM</div>
+    <div class="song-card"><span>4.</span> I WANNA DANCE</div>
+  </div>
+</div>
+
+<!-- TECHNO -->
+<div class="song-section" id="techno-list">
+  <h2 style="color:#ff005c; margin-bottom:10px;">Daftar Lagu TECHNO</h2>
+  <div class="song-grid">
+    <div class="song-card"><span>1.</span> FISHER</div>
+    <div class="song-card"><span>2.</span> COLD PLAY</div>
+    <div class="song-card"><span>3.</span> THRILL</div>
+    <div class="song-card"><span>4.</span> SATISFACTION</div>
+  </div>
+</div>
+
+<!-- INDOBOUNCE -->
+<div class="song-section" id="indobounce-list">
+  <h2 style="color:#ff005c; margin-bottom:10px;">Daftar Lagu INDOBOUNCE</h2>
+  <div class="song-grid">
+    <div class="song-card"><span>1.</span> ELEPHANT</div>
+    <div class="song-card"><span>2.</span> MONOSTEREO</div>
+    <div class="song-card"><span>3.</span> NO PROMISES</div>
+  </div>
+</div>
+
+<!-- AFRO -->
+<div class="song-section" id="afro-list">
+  <h2 style="color:#ff005c; margin-bottom:10px;">Daftar Lagu AFRO</h2>
+  <div class="song-grid">
+    <div class="song-card"><span>1.</span> KALA CINTA MENGGODA</div>
+    <div class="song-card"><span>2.</span> NGAPAIN REPOT</div>
+  </div>
+</div>
+
+<!-- HARDSTYLE -->
+<div class="song-section" id="hardstyle-list">
+  <h2 style="color:#ff005c; margin-bottom:10px;">Daftar Lagu HARDSTYLE</h2>
+  <div class="song-grid">
+    <div class="song-card"><span>1.</span> ECSTASY</div>
+    <div class="song-card"><span>2.</span> EUPHORIA</div>
+  </div>
+</div>
+
+<!-- MANDARIN -->
+<div class="song-section" id="mandarin-list">
+  <h2 style="color:#ff005c; margin-bottom:10px;">Daftar Lagu MANDARIN</h2>
+  <div class="song-grid">
+    <div class="song-card"><span>1.</span> BI JING SHEN AI GUO</div>
+    <div class="song-card"><span>2.</span> HUO LAI</div>
+  </div>
+</div>
+
+<footer>© 2025 King Of Tale Studio</footer>
+
+<script>
+  const genres = [
+    {btn:"bkb-button", list:"bkb-list"},
+    {btn:"techno-button", list:"techno-list"},
+    {btn:"indobounce-button", list:"indobounce-list"},
+    {btn:"afro-button", list:"afro-list"},
+    {btn:"hardstyle-button", list:"hardstyle-list"},
+    {btn:"mandarin-button", list:"mandarin-list"}
+  ];
+
+  let currentOpen = null;
+
+  genres.forEach(genre => {
+    const button = document.getElementById(genre.btn);
+    const list = document.getElementById(genre.list);
+    list.style.display = "none";
+
+    button.addEventListener("click", () => {
+      if (currentOpen === list) {
+        list.style.display = "none";
+        currentOpen = null;
+      } else {
+        if (currentOpen) currentOpen.style.display = "none";
+        list.style.display = "block";
+        currentOpen = list;
+        button.insertAdjacentElement("afterend", list);
+        list.scrollIntoView({behavior:"smooth", block:"start"});
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
